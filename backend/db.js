@@ -21,8 +21,8 @@ const mongoDB = async () => {
 
     const FoodItem = mongoose.model('FoodItem', itemSchema, 'food_items');
     const items = await FoodItem.find({}).exec();
-    console.log('Food Items:', items);
-    
+    //console.log('Food Items:', items);
+
   } catch (error) {
     console.error('Error connecting to MongoDB Atlas:', error);
   } finally {
