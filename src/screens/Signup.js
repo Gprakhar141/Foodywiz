@@ -17,7 +17,7 @@ export default function Signup() {
         const json = await response.json()
         console.log(json);
 
-        if(!json.successs) alert("Enter Valid Credentials")
+        if(!json.success) alert("Enter Valid Credentials")
 
     }
     const onChange = (event) => {

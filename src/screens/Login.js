@@ -20,7 +20,11 @@ let navigate = useNavigate();
     console.log(json);
 
     if (!json.success) alert("Enter Valid Credentials");
-    if (json.success) navigate('/');
+    if (json.success) {
+      localStorage.setItem("authToken",json.authToken);
+      console.log(localStorage.getItem("authToken"));
+      navigate('/');
+    } 
   };
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
