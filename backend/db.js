@@ -14,6 +14,10 @@ const itemSchema = new mongoose.Schema({
   description: String
 });
 
+const catSchema = new mongoose.Schema({
+  CategoryName: String
+})
+
 const mongoDB = async () => {
   try {
     await mongoose.connect(mongoURI);
@@ -22,6 +26,12 @@ const mongoDB = async () => {
     const FoodItem = mongoose.model('FoodItem', itemSchema, 'food_items');
     const items = await FoodItem.find({}).exec();
     //console.log('Food Items:', items);
+    //global.food_items = items;
+    const foodCategory = mongoose.model('foodCategory', catSchema, 'foodCategory');
+    const catData = await foodCategory.find({}).exec();
+
+    global.food_items = items;
+    global.foodCategory = catData;
 
   } catch (error) {
     console.error('Error connecting to MongoDB Atlas:', error);
