@@ -40,13 +40,13 @@ export default function Home() {
               </div> 
             </div>
             <div className="carousel-item active">
-              <img src="https://source.unsplash.com/random/1350x650/?burger" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
+              <img src="https://source.unsplash.com/random/1350x900/?burger" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/1350x650/?pastry" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
+              <img src="https://source.unsplash.com/random/1350x900/?pastry" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
             </div>
             <div className="carousel-item">
-              <img src="https://source.unsplash.com/random/1350x650/?barbeque" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
+              <img src="https://source.unsplash.com/random/1350x900/?barbeque" className="d-block w-100" alt="..." style={{ filter: "brightness(30%)" }} />
             </div>
           </div>
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -62,7 +62,7 @@ export default function Home() {
       </div>
       <div className='container'>
         {
-          foodCat !== []
+          foodCat.length !== 0
             ? foodCat.map((data) => {
               return (
                 <div className='row mb-3'>
@@ -70,15 +70,15 @@ export default function Home() {
                     {data.CategoryName}
                   </div>
                   <hr />
-                  {foodItem !== []
+                  {foodItem.length !== 0
                     ?
                     foodItem.filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
                       .map(filterItems => {
                         return (
                           <div key={filterItems._id} className='col-12 col-md-6 col-lg-3'>
-                            <Card foodName={filterItems.name}
+                            <Card foodItem={filterItems}
                               options={filterItems.options[0]}
-                              imgSrc={filterItems.img}
+                              
                             ></Card>
                           </div>
                         )
