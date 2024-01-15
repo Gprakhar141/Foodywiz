@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Signup() {
     const [credentials, setCredentials] = useState({name:"",email:"",password:"",geolocation:""})
 
+    let navigate = useNavigate();
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -17,6 +18,7 @@ export default function Signup() {
         const json = await response.json()
         console.log(json);
 
+        if(json.success) navigate('/login');
         if(!json.success) alert("Enter Valid Credentials")
 
     }
