@@ -75,7 +75,7 @@ export default function Home() {
                     foodItem.filter((item) => (item.CategoryName === data.CategoryName) && (item.name.toLowerCase().includes(search.toLowerCase())))
                       .map(filterItems => {
                         return (
-                          <div key={filterItems._id} className='col-12 col-md-6 col-lg-3'>
+                          <div key={filterItems._id} className='col-12 col-md-6 col-lg-3 m-2'>
                             <Card foodItem={filterItems}
                               options={filterItems.options[0]}
                               
