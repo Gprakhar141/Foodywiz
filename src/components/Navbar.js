@@ -18,17 +18,11 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
         <div className="container-fluid">
-<<<<<<< HEAD
           <div>
             <Link className="navbar-brand fs-3 fw-bold" to="/">
               FoodyWiz
             </Link>
           </div>
-=======
-          <Link className="navbar-brand fs-1 fst-italic" to="/">
-            FoodyWiz
-          </Link>
->>>>>>> 04d5e747db2c55696d132d5ff832b8a4e1543910
           <button
             className="navbar-toggler"
             type="button"
