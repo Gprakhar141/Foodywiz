@@ -18,9 +18,11 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
         <div className="container-fluid">
-          <Link className="navbar-brand fs-1 fst-italic" to="/">
-            GoFood
-          </Link>
+          <div>
+            <Link className="navbar-brand fs-3 fw-bold" to="/">
+              FoodyWiz
+            </Link>
+          </div>
           <button
             className="navbar-toggler"
             type="button"
